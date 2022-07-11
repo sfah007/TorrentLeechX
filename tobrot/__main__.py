@@ -105,7 +105,12 @@ botcmds = [
     (f'{BotCommands.MannualgUpCommand}',"Upload a file from bot's local server to gdrive")
 ]
 '''
+@server.route("/" , methods=["GET"])
+def getMessageToBot():
+    print('hi')
+	return "!", 200
 if __name__ == "__main__":
+    serve(server, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
     # create download directory, if not exist
     if not os.path.isdir(DOWNLOAD_LOCATION):
         os.makedirs(DOWNLOAD_LOCATION)
@@ -305,13 +310,8 @@ if __name__ == "__main__":
     app.add_handler(mediainfo_handler)
 
 app.start()
-@server.route("/" , methods=["GET"])
-def getMessageToBot():
-    print('hi')
-	return "!", 200
 
 
-if __name__ == "__main__":
-	serve(server, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
 logging.info(f"@{bot.username} Has Started Running...🏃💨💨")
 idle()
