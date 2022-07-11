@@ -12,7 +12,7 @@ from pyrogram import Client, filters, idle
 from pyrogram.raw import functions, types
 from pyrogram.handlers import CallbackQueryHandler, MessageHandler
 
-from tobrot import app, bot
+from tobrot import app, bot, server
 from tobrot import (
     AUTH_CHANNEL,
     CANCEL_COMMAND_G,
