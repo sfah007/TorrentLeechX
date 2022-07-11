@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K | gautamajay52 | Amirul Andalib
 
+from flask import Flask, request, redirect
 import asyncio
 import logging
 import os
@@ -189,6 +190,7 @@ def multi_rclone_init():
 multi_rclone_init()
 
 app = Client("LeechBot", bot_token=TG_BOT_TOKEN, api_id=APP_ID, api_hash=API_HASH, workers=343)
+server = Flask(__name__)
 
 updater = tg.Updater(token=TG_BOT_TOKEN)
 bot = updater.bot
