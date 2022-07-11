@@ -7,6 +7,7 @@ import logging
 import os
 import sys
 import traceback
+from waitress import serve
 
 from pyrogram import Client, filters, idle
 from pyrogram.raw import functions, types
